@@ -1,11 +1,8 @@
-import { Button } from "@repo/ui/button";
-
 function Home() {
   return (
-    <>
-      <h1>Home</h1>
-      <Button appName="web">Click me</Button>
-    </>
+    <div className="h-screen flex items-center justify-center">
+      <h1 className="text-2xl font-bold">Coming Soon</h1>
+    </div>
   );
 }
 
