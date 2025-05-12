@@ -1,14 +1,8 @@
-import type { Metadata } from "next";
-
 import Container from "../components/layout/container";
 import { LinkSection } from "../components/layout/link-section";
 import { ProjectSection } from "../components/layout/project-section";
-import { SpotifyShowcase } from "../components/spotify/spotify-showcase";
 import { WritingSection } from "../components/layout/writing-section";
-
-export const metadata: Metadata = {
-  title: "Now Playing",
-};
+import { SpotifyShowcase } from "../components/spotify/spotify-showcase";
 
 export default function Home() {
   return (
