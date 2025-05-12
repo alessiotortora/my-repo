@@ -21,8 +21,8 @@ const alessioScript = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Alessio's CV",
-  description: "My personal CV",
+  title: "Alessio's Portfolio",
+  description: "Brief introduction to my work and skills",
 };
 
 export default function RootLayout({
@@ -31,16 +31,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <Script
           defer
           src="https://umami.unriddle.xyz/script.js"
-          data-website-id="28edf1b6-fa87-4c30-b100-6c3370cb00b9"
+          data-website-id="857c67fd-8e96-4f2e-8c36-4aa4ffad303e"
         />
       </head>
       <body
-        className={`${inter.variable} ${newsreader.variable} ${alessioScript.variable} antialiased`}
+        className={`${inter.variable} ${newsreader.variable}  ${alessioScript.variable} antialiased`}
       >
         {children}
       </body>
