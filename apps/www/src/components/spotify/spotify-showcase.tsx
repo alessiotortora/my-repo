@@ -6,16 +6,34 @@ interface NowPlayingResponse {
   albumImageUrl?: string;
   songUrl?: string;
   playedAt?: string;
+  error?: string;
 }
 
 async function getNowPlaying(): Promise<NowPlayingResponse> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/spotify`, {
-    next: { revalidate: 30 },
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  return res.json();
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/spotify`, {
+      next: { revalidate: 30 },
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      console.error("Spotify API error:", res.status, res.statusText);
+      return { isPlaying: false, error: "Failed to fetch from Spotify API" };
+    }
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      console.error("Invalid content type:", contentType);
+      return { isPlaying: false, error: "Invalid response from API" };
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching Spotify data:", error);
+    return { isPlaying: false, error: "Error connecting to Spotify API" };
+  }
 }
 
 import { AlbumWrapper } from "./album-wrapper";
@@ -23,10 +41,10 @@ import { AlbumWrapper } from "./album-wrapper";
 export async function SpotifyShowcase() {
   const song = await getNowPlaying();
 
-  if (!song.title) {
+  if (song.error || !song.title) {
     return (
       <div className="flex items-center justify-center mt-12">
-        <p className="text-gray-500">Not playing anything right now</p>
+        <p className="text-gray-500">{song.error || "Not playing anything right now"}</p>
       </div>
     );
   }
