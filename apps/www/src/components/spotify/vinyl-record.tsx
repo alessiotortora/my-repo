@@ -108,7 +108,7 @@ export function VinylRecord({ className, albumUrl }: VinylRecordProps) {
           navigator.audioSession.type = "playback";
         }
       } catch (e) {
-        console.warn("Failed to set audioSession.type:", e);
+        // silent fail
       }
 
       const gainNode = context.createGain();
