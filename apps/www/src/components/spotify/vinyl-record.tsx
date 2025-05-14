@@ -100,6 +100,17 @@ export function VinylRecord({ className, albumUrl }: VinylRecordProps) {
 
     if (!audioContextRef.current && audioBufferRef.current) {
       const context = new (window.AudioContext || window.webkitAudioContext)();
+
+      // iOS 17+ audio session fix
+      try {
+        if (typeof navigator !== "undefined" && "audioSession" in navigator) {
+          // @ts-ignore – not yet in TypeScript types
+          navigator.audioSession.type = "playback";
+        }
+      } catch (e) {
+        // silent fail
+      }
+
       const gainNode = context.createGain();
       gainNode.connect(context.destination);
       gainNode.gain.value = 0;
@@ -175,7 +186,6 @@ export function VinylRecord({ className, albumUrl }: VinylRecordProps) {
             <img src={albumUrl} alt="Album label" className="w-full h-full object-cover" />
           </div>
         )}
-        {/* Center hole */}
         <div
           className="absolute rounded-full bg-white"
           style={{
