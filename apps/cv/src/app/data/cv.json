@@ -27,21 +27,31 @@
     }
   ],
   "skills": [
+    "React.js",
     "Next.js",
-    "React",
+    "Typescript",
     "Tailwind CSS",
-    "TypeScript",
+    "Zustand",
+    "UX/UI Collaboration",
     "Node.js",
     "Supabase",
     "PostgreSQL",
     "Drizzle",
+    "Prisma",
+    "REST API",
+    "GraphQL",
     "Docker",
+    "Vercel",
+    "VPS & Self-Hosting",
     "Git",
     "GitHub",
-    "GraphQL",
-    "REST",
-    "API",
-    "OpenAI",
+    "GitHub Actions",
+    "OpenAI API",
+    "Google Maps API",
+    "MapLibre",
+    "WebSockets",
+    "Mux",
+    "Technical Documentation",
     "Monorepos"
   ],
   "soft": {
@@ -56,10 +66,12 @@
       "link": "https://confident.ch/",
       "location": "Winterthur, Switzerland",
       "details": [
-        "Built digital platforms using React, Next.js, and SSR.",
-        "Implemented secure auth and data flows with Supabase (PostgreSQL).",
-        "Wrote Node.js scripts to automate dev tasks.",
-        "Managed issues and PRs on GitHub."
+        "Built and maintained a custom multi-tenant CMS and marketplace platform for 180+ opticians, enabling easy website deployment and customization.",
+        "Designed secure, scalable authentication and data flows using Supabase/PostgreSQL.",
+        "Developed an Urban Golf MVP as a solo project, implementing real-time scoring with WebSockets.",
+        "Automated development workflows and CI/CD using GitHub Actions, increasing team efficiency.",
+        "Wrote Node.js scripts to streamline development tasks and reduce manual workload.",
+        "Managed issues and pull requests on GitHub, supporting smooth team collaboration."
       ]
     },
     {
