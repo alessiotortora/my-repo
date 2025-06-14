@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cv.alessiotortora.com/sitemap.xml 

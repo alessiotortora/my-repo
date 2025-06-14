@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import localFont from "next/font/local";
 import "@repo/ui/globals.css";
+import { ConsoleArt } from "@repo/ui/components/console-art";
 import Script from "next/script";
 
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${newsreader.variable}  ${alessioScript.variable} antialiased`}
       >
+        <ConsoleArt message="Welcome to my portfolio!\n\nYou opened the console, so you must be interested! Feel free to send me a message: hello@alessiotortora.com" />
         {children}
       </body>
     </html>
