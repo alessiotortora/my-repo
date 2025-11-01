@@ -43,6 +43,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${newsreader.variable}  ${alessioScript.variable} antialiased`}
       >
+        <OpenPanelComponent
+        clientId='1e3d9bcf-a30b-43c6-b9d9-c49430003861'
+        trackScreenViews={true}
+        trackOutgoingLinks={true}
+        trackAttributes={true}
+      />
         <ConsoleArt message="Welcome to my portfolio!\n\nYou opened the console, so you must be interested! Feel free to send me a message: hello@alessiotortora.com" />
         {children}
       </body>

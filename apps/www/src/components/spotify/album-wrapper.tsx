@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/use-media-query";
 import { VinylRecord } from "./vinyl-record";
@@ -24,7 +24,7 @@ export function AlbumWrapper({ albumUrl, albumName }: SpotifyAlbumWrapperProps) 
       <motion.div
         className="absolute inset-0 z-[1] cursor-pointer md:cursor-default"
         onTapStart={toggleVinyl}
-      >
+      > 
         <img src={albumUrl} alt={albumName} className="w-full h-full object-cover rounded-md" />
         {/* Texture overlay */}
         <img
