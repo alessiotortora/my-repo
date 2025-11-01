@@ -33,13 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <Script
-          defer
-          src="https://umami.unriddle.xyz/script.js"
-          data-website-id="28edf1b6-fa87-4c30-b100-6c3370cb00b9"
-        />
-      </head>
       <body
         className={`${inter.variable} ${newsreader.variable} ${alessioScript.variable} antialiased`}
       >
