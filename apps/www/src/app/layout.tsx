@@ -3,7 +3,6 @@ import { Inter, Newsreader } from "next/font/google";
 import localFont from "next/font/local";
 import "@repo/ui/globals.css";
 import { ConsoleArt } from "@repo/ui/components/console-art";
-import { OpenPanelComponent } from '@openpanel/nextjs';
 
 const inter = Inter({
   variable: "--font-primary",
@@ -33,13 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <OpenPanelComponent
-        clientId='1e3d9bcf-a30b-43c6-b9d9-c49430003861'
-        trackScreenViews={true}
-        trackOutgoingLinks={true}
-        trackAttributes={true}
-      />
-  
       <body
         className={`${inter.variable} ${newsreader.variable}  ${alessioScript.variable} antialiased`}
       >
